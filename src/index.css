@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+/* Tailwind v4: opt into class-based dark mode (toggled via a `dark` class on <html>)
+   instead of the default `prefers-color-scheme` media query. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+  font-family:
+    system-ui,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}
+
+/* Native PDF viewer iframe fills its container cleanly */
+iframe.pdf-frame {
+  @apply h-full w-full rounded-md border border-slate-200 bg-white dark:border-slate-700;
+}
