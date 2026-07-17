@@ -7,7 +7,7 @@
  * enumitem (they're either unrecognized or silently no-op). Sticking to core
  * article-class commands (\section*, itemize, textbf/textit, center, \\)
  * also happens to line up with the ATS rules (no tables/icons/images,
- * standard structure) — see the tailoring prompt in lib/anthropic.ts.
+ * standard structure) — see the tailoring prompt in lib/providers/shared.ts.
  */
 export const DEFAULT_RESUME_LATEX = String.raw`\documentclass[11pt]{article}
 \pagestyle{empty}

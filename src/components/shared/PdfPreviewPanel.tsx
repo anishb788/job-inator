@@ -50,6 +50,13 @@ export function PdfPreviewPanel({ latexSource, fileName = 'resume' }: PdfPreview
     return () => clearTimeout(timer)
   }, [latexSource])
 
+  /**
+   * Rasterizes the rendered preview (the `.page` element inside the iframe,
+   * or the whole body as a fallback) to a canvas via html2canvas, then embeds
+   * that single image into a one-page US Letter PDF via jsPDF, scaled to fit
+   * and centered horizontally. Both libraries are dynamically imported so
+   * they're only pulled into the bundle when a download is actually requested.
+   */
   async function handleDownload() {
     const iframeDoc = iframeRef.current?.contentDocument
     if (!iframeDoc?.body) return

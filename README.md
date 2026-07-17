@@ -27,12 +27,17 @@ subset of LaTeX (sections, bold/italic, lists, center blocks) rather than arbitr
 see `src/lib/latexCompiler.ts` and the tailoring prompt in `src/lib/providers/shared.ts` for the
 exact constraints.
 
+See [`docs/README.md`](docs/README.md) for the full documentation index — architecture, plus a
+complete reference for every module under `src/`.
+
 ## Development
 
 ```bash
 npm install
 npm run dev      # start the dev server
 npm run build    # type-check + production build
+npm run preview  # preview the production build locally
+npm run lint     # oxlint
 ```
 
 ## Security note

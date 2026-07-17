@@ -7,6 +7,9 @@ import { PdfPreviewPanel } from '../shared/PdfPreviewPanel'
 
 export function LatexEditorPage() {
   const { theme, resumeLatex, setResumeLatex } = useAppContext()
+  // `draft` is seeded from `resumeLatex` once at mount and intentionally not
+  // kept in sync with later external changes to `resumeLatex` — edits here
+  // are only committed back to AppContext when the user clicks Save.
   const [draft, setDraft] = useState(resumeLatex)
   const [savedMessage, setSavedMessage] = useState(false)
 
